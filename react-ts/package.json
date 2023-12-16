@@ -1,0 +1,30 @@
+{
+  "name": "react-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config ./config/config.dev.ts",
+    "build:prod": "tsc && vite build --config ./config/config.prod.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@arco-design/web-react": "^2.53.1",
+    "axios": "^1.5.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "6.2.1",
+    "react-router-dom": "6.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}
