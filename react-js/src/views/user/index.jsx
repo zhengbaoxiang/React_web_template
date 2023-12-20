@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-19 13:09:49
  * @LastEditors: zbx
- * @LastEditTime: 2023-11-15 17:39:27
+ * @LastEditTime: 2023-12-18 16:00:27
  * @descript: 文件描述
  */
 import { useState, useRef, useEffect,useImperativeHandle } from 'react';
@@ -22,7 +22,7 @@ export default function () {
         console.log('effect', isPlaying)
         myChart = echarts.init(document.getElementById('chartId'))
 
-        console.log('渲染触发');
+        console.log('渲染触发','count变化后触发',count);
         getData()
         return () => {
             console.log('❌ 清除定时器');
@@ -32,6 +32,10 @@ export default function () {
     useEffect(()=>{
         console.log('只挂载时触发一次');
     },[])
+    useEffect(() => {  
+        console.log('更新时触发');
+        // 这里的代码会在每次渲染后执行，类似updated(){}
+    });
 
     function getData() {
         let data = []
@@ -106,7 +110,7 @@ export default function () {
 
     const btnClick = () => {
         console.log('btnClick', count)
-        setCount(count+1)
+        // setCount(count+1)
         setIsPlaying(!isPlaying)
 
         console.log('videoRef',videoRef)

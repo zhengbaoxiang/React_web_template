@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-11-07 15:07:14
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-04 15:01:33
+ * @LastEditTime: 2023-12-18 16:54:22
  * @descript: 文件描述
  */
 import React, { useState, useEffect, useRef } from 'react';
@@ -214,7 +214,7 @@ function Temp() {
                 setVisible(false)
 
                 console.log('pageForm', pageForm.getFieldsValue())
-            }, 1000);
+            }, 500);
         })
     }
 

@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-19 15:47:42
  * @LastEditors: zbx
- * @LastEditTime: 2023-10-17 17:39:40
+ * @LastEditTime: 2023-12-18 14:43:58
  * @descript: 文件描述
  */
 import { Routes, Route, Link } from "react-router-dom";
@@ -11,6 +11,7 @@ import { List } from '@arco-design/web-react';
 
 export default function () {
     const [count, setCount] = useState(0);
+    
 
     function handleClick(params) {
         console.log("You clicked me!-params", params);
@@ -92,7 +93,7 @@ export function SearchBar({
                 <input
                     type="checkbox"
                     checked={inStockOnly}
-                    onChange={(e) => onInStockOnlyChange(e.target.value)}
+                    onChange={(e) => {onInStockOnlyChange(e.target.value);console.log(inStockOnly)}}
                 />{" "}
                 only show produce in stock
             </label>
