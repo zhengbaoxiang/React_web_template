@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 19:53:11
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-20 19:53:44
+ * @LastEditTime: 2023-12-21 17:20:08
  * @descript: 文件描述
  */
 /*
@@ -20,8 +20,8 @@ const User =lazy (()=>import("@/views/user/user") )
 export default [
     {
         // index:true,  // 索引路由可以被认为是“默认子路由”
-        path: '/home',
-        name: 'home',
+        path: '/',  // 使用索引路由，则需要path 为 / 比较好
+        name: 'home', 
         meta: {
             title:'主页2'
         },
