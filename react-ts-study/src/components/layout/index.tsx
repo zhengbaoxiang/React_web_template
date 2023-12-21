@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 19:19:58
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-21 17:39:04
+ * @LastEditTime: 2023-12-21 19:08:44
  * @descript: 文件描述
  */
 import React from 'react';
@@ -24,7 +24,7 @@ export default function layout() {
                         <p>  <Link to="/user">子页</Link></p>
                         <p>  <Link to="/login">login</Link></p>
                         <p>  <NavLink to="/about">about</NavLink></p>
-                        <p>  <NavLink to="/template">模板页</NavLink></p>
+                        <p>  <NavLink to="/template">动态链接-模板页</NavLink></p>
                     </Sider>
                     <Content className="mainContent bdy">
                         <Outlet />

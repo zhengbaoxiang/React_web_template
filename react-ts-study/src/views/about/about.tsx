@@ -16,7 +16,7 @@ function App() {
 
     return (
         <> 
-        <div style={{'text-align':'center'}}>
+        <div style={{textAlign:'center'}}>
 
             <div>
                 <a href="https://vitejs.dev" target="_blank">

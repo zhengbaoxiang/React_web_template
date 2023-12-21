@@ -1,36 +1,31 @@
-/*
- * @Date: 2023-12-20 15:35:59
- * @LastEditors: zbx
- * @LastEditTime: 2023-12-21 19:36:25
- * @descript: 文件描述
- */
+
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-import { Button,List } from 'antd';
+import { Button } from 'antd';
 
+import { List } from 'antd'
 
 export default function () {
-    const navigate = useNavigate();
-    function loginClick() {
-        console.log('click');
-        // 以编程方式导
-        navigate('/')
-    }
-
     const [count, setCount] = useState(0);
+
 
     function handleClick(params:any) {
         console.log("You clicked me!-params", params);
         setCount(count + 2);
     }
 
- 
+    let navigate = useNavigate();
+    function loginClick() {
+        console.log('click');
+        navigate('/')
+    }
     return (
         <div className='center' style={{ padding: "1rem " }}>
-            <Button onClick={loginClick}>返回主页</Button>
+            <h2>模板文件</h2>
             <p>
                 <Link to="/">返回主页</Link>
             </p>
+            <Button onClick={loginClick}>返回主页</Button>
 
             <List
                 style={{ width: 622 }}
@@ -53,31 +48,30 @@ export default function () {
         </div>
     );
 }
-
 //   React 组件是返回标记的 JavaScript 函数：必须始终以大写字母开头
 function MyCom() {
     const user = {
         name: "Hedy Lamarr",
-        imageUrl:"https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp",
+        imageUrl:
+            "https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp",
         imageSize: 90,
     };
 
-    function onClick(params:any) {
+    function onClick(params) {
         console.log("You clicked me!", params);
     }
-
     return (
         <div>
             <button >{user.name}</button>
-            <button onClick={onClick}>1-直接绑定函数变量</button>
+            <button onClick={onClick}>1-{user.name}</button>
             <button onClick={e => {
                 e.stopPropagation();
-                onClick('自定义参数');
-            }}>2-箭头函数绑定按钮</button>
+                onClick(123445);
+            }}>2-按钮{user.name}</button>
 
             <img
-                alt="样式、属性"
                 className="avatar"
+                alt="加载失败"
                 src={user.imageUrl}
                 style={{
                     width: user.imageSize,
@@ -199,6 +193,23 @@ export function ProductRow({ product }) {
 }
 
 
+
+function ProductsList() {
+    const products = [
+        { title: "Cabbage", id: 1 },
+        { title: "Garlic", id: 2 },
+        { title: "Apple", id: 3, isFruit: true },
+    ];
+    const ListItems = products.map((pro) => {
+        return (
+            <li key={pro.id} style={{ color: pro.isFruit ? "red" : "green" }}>
+                {pro.title}
+            </li>
+        );
+    });
+    return <ul>{ListItems}</ul>;
+}
+
 function MyButton({ count, onClick }) {
     const [number, setNumber] = useState(0);
 
@@ -221,24 +232,6 @@ function MyButton({ count, onClick }) {
         </div>
     )
 }
-
-function ProductsList() {
-    const products = [
-        { title: "Cabbage", id: 1 },
-        { title: "Garlic", id: 2 },
-        { title: "Apple", id: 3, isFruit: true },
-    ];
-    const ListItems = products.map((pro) => {
-        return (
-            <li key={pro.id} style={{ color: pro.isFruit ? "red" : "green" }}>
-                {pro.title}
-            </li>
-        );
-    });
-    return <ul>{ListItems}</ul>;
-}
-
-
 
 function MovingDot() {
     const [position, setPosition] = useState({

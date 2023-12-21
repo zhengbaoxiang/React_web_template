@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 19:53:11
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-21 17:20:08
+ * @LastEditTime: 2023-12-21 19:07:39
  * @descript: 文件描述
  */
 /*
@@ -19,8 +19,10 @@ const User =lazy (()=>import("@/views/user/user") )
 
 export default [
     {
+        // 注意，它有' index '属性而不是' path '。
+        // 这是因为索引路由共享父路由的路径。这就是重点——它没有路径。
         // index:true,  // 索引路由可以被认为是“默认子路由”
-        path: '/',  // 使用索引路由，则需要path 为 / 比较好
+        path: '/',  // 使用索引路由，则不要设置path
         name: 'home', 
         meta: {
             title:'主页2'
