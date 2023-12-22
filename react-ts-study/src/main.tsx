@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 15:15:07
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-20 17:26:45
+ * @LastEditTime: 2023-12-22 10:31:37
  * @descript: 文件描述
  */
 import React from 'react'
@@ -12,9 +12,16 @@ import App from './App'
 
 import './index.less'
 
+import { Provider } from 'react-redux'
+import store from '@/redux/index'
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
     // 这个严格模式，会使constructor 和 componentDidMount 都执行两次
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    // 使用指定的 React Redux 组件 <Provider> 来  让所有容器组件都可以访问 store，
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>,
+    </React.StrictMode>,
 )
