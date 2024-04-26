@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 15:35:59
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-22 10:19:58
+ * @LastEditTime: 2024-03-13 15:19:37
  * @descript: 文件描述
  */
 import { useNavigate, Link } from "react-router-dom";
@@ -28,7 +28,7 @@ export default function () {
     return (
         <div className='center' style={{ padding: "1rem " }}>
             <Button onClick={loginClick}>返回主页</Button>
-            <p>             <Link to="/">返回主页</Link>            </p>
+            <p> <Link to="/">返回主页</Link>            </p>
             <MyCom></MyCom>
             <MyButton count={count} onClick={handleClick}></MyButton>
             <MyButton count={count} onClick={handleClick}></MyButton>

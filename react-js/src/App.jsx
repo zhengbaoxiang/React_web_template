@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-19 10:43:51
  * @LastEditors: zbx
- * @LastEditTime: 2023-10-17 17:45:06
+ * @LastEditTime: 2024-03-11 11:26:35
  * @descript: 文件描述
  */
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -53,18 +53,3 @@ function App() {
 }
 
 export default App;
-
-
-function debounce(){
-    let timer = null
-    return function(cb,millSeconds){
-        if(timer){
-            clearTimeout(timer)
-            // return
-        }
-        timer = setTimeout(() => {
-            cb()
-            timer = null
-        }, millSeconds);
-    }
-}

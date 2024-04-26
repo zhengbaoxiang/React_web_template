@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 15:35:18
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-20 19:57:29
+ * @LastEditTime: 2024-04-26 09:05:00
  * @descript: 文件描述
  */
 // npm install react-router-dom@6 history@5
@@ -15,6 +15,7 @@ import routes from "./routes";
 import Home from "@/views/home/home";
 // import Template from "@/views/template";
 const Template = lazy(() => import("@/views/template"))
+const AlarmDetail = lazy(() => import("@/views/alarmDetail"))
 
 const Login = lazy(() => import("@/views/login/login"))
 const About = lazy(() => import("@/views/about/about"))
@@ -22,39 +23,47 @@ const About = lazy(() => import("@/views/about/about"))
 
 const routeList: any[] = [
     {
-        path: '/',
-        name: '_home',
-        element: <Layout />,
+        path: '/alarmDetail',
+        name: 'alarmDetail',
         meta: {
-            title: '主页'
+            title: '探针'
         },
-        children:routes
+        element: <Suspense fallback={<></>}><AlarmDetail /> </Suspense>
     },
-    {
-        path: '/login',
-        name: 'login',
-        meta: {
-            title: '登录页',
-            hideInMenu: true
-        },
-        element: <Suspense fallback={<></>}><Login /> </Suspense>
-    },
-    {
-        path: '/about',
-        name: 'about',
-        meta: {
-            title: '关于'
-        },
-        element: <Suspense fallback={<></>}> <About /> </Suspense>
-    },
-    {
-        path: '/template',
-        name: 'template',
-        meta: {
-            title: '模板页'
-        },
-        element: <Suspense fallback={<></>}><Template /> </Suspense>
-    },
+    // {
+    //     path: '/',
+    //     name: '_home',
+    //     element: <Layout />,
+    //     meta: {
+    //         title: '主页'
+    //     },
+    //     children:routes
+    // },
+    // {
+    //     path: '/login',
+    //     name: 'login',
+    //     meta: {
+    //         title: '登录页',
+    //         hideInMenu: true
+    //     },
+    //     element: <Suspense fallback={<></>}><Login /> </Suspense>
+    // },
+    // {
+    //     path: '/about',
+    //     name: 'about',
+    //     meta: {
+    //         title: '关于'
+    //     },
+    //     element: <Suspense fallback={<></>}> <About /> </Suspense>
+    // },
+    // {
+    //     path: '/template',
+    //     name: 'template',
+    //     meta: {
+    //         title: '模板页'
+    //     },
+    //     element: <Suspense fallback={<></>}><Template /> </Suspense>
+    // },
     {
         path: "*",
         name: 'notfound',

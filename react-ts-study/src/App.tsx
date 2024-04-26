@@ -8,13 +8,15 @@ import { useState } from 'react'
 // import About from "@/views/about/about";
 
 // 2、喜欢基于 JavaScript 对象的路由配置
+
 import { Router } from '@/route/index'
+import globalConfig from '@/config';
 
 
 function App() {
     return (
         <>
-            <BrowserRouter>
+            <BrowserRouter basename={globalConfig.base}>
                 <Router />
                 {/* <Routes>
                         <Route path="/" element={<Home />}></Route>
@@ -23,7 +25,6 @@ function App() {
                         <Route path="about" element={<About />}></Route>
                     </Routes> */}
             </BrowserRouter>
-
         </>
     )
 }

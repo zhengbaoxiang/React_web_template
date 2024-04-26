@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-12-20 19:19:58
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-21 19:08:44
+ * @LastEditTime: 2024-04-23 17:11:56
  * @descript: 文件描述
  */
 import React from 'react';
@@ -21,10 +21,11 @@ export default function layout() {
                 <Layout className="mainCon">
                     <Sider width="250px" className="siderCon">
                         <p>  <Link to="/">主页</Link></p>
-                        <p>  <Link to="/user">子页</Link></p>
+                        <p>  <Link to="/user">用户</Link></p>
                         <p>  <Link to="/login">login</Link></p>
                         <p>  <NavLink to="/about">about</NavLink></p>
                         <p>  <NavLink to="/template">动态链接-模板页</NavLink></p>
+                        <p>  <NavLink to="/tanzhen">探针</NavLink></p>
                     </Sider>
                     <Content className="mainContent bdy">
                         <Outlet />

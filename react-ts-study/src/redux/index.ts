@@ -1,11 +1,11 @@
 /*
  * @Date: 2023-09-26 14:00:45
  * @LastEditors: zbx
- * @LastEditTime: 2023-12-22 11:18:44
+ * @LastEditTime: 2024-03-11 11:17:25
  * @descript: 文件描述todo
  */
 
-import { createStore ,configureStore } from 'redux'
+import { createStore  } from 'redux'
 import reducer from './reducers'
 
 // 应用中所有的 state 都以一个对象树的形式储存在一个单一的 store 中。 
@@ -15,7 +15,7 @@ const initialState = {
     visibilityFilter: 'asd',
     todos: []
 };
-const store = configureStore(reducer, initialState)
+const store = createStore(reducer, initialState)
 export default store
 
 
