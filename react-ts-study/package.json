@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config ./config/vite.config.dev.ts",
-    "build:testing": "vite build --config ./config/vite.config.testing.ts",
+    "build:testing": "vite build --config ./config/vite.config.testing.ts && npm run postbuild",
     "build:prod": "vite build --config ./config/vite.config.prod.ts",
-    "build:check": "vue-tsc --noEmit --skipLibCheck && vite build --config ./config/vite.config.prod.ts"
+    "build:check": "vue-tsc --noEmit --skipLibCheck && vite build --config ./config/vite.config.prod.ts",
+    "postbuild": "node ./zip.js"
   },
   "dependencies": {
     "antd": "^5.12.4",
     "axios": "^1.6.8",
+    "compressing": "^1.10.0",
     "dayjs": "^1.11.10",
     "echarts": "^5.4.3",
     "history": "^5.3.0",

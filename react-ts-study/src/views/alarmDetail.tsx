@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-04-19 16:46:06
  * @LastEditors: zbx
- * @LastEditTime: 2024-04-26 10:25:00
+ * @LastEditTime: 2024-04-29 13:37:49
  * @descript: 文件描述
  */
 import dayjs from 'dayjs';
@@ -98,7 +98,7 @@ const HandleForm: React.FC = () => {
                 layout="horizontal"
                 onFinish={submit}
             >
-                <Form.Item name="fixer" label="bug修复人" rules={[{ required: true, message: '请输入' }]} >
+                <Form.Item name="fixer" label="告警处理人" rules={[{ required: true, message: '请输入' }]} >
                     <Input />
                 </Form.Item>
                 <Form.Item name="department" label="责任部门" rules={[{ required: true, message: '请输入' }]}>
